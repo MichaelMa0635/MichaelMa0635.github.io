@@ -1,0 +1,570 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Michael Ma">
+  <meta name="keywords" content="">
+  <meta name="description" content="Markdown语法 [TOC] 献给写作者的 Markdown 新手指南献给写作者的 Markdown 新手指南 「简书」作为一款「写作软件」在诞生之初就支持了 Markdown，Markdown 是一种「电子邮件」风格的「标记语言」，我们强烈推荐所有写作者学习和掌握该语言。为什么？可以参考:  『为什么作家应该用 Markdown 保存自己的文稿』。 『Markdown写作浅谈』  在此，我们">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown语法">
+<meta property="og:url" content="http://example.com/2021/11/05/Markdown%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:site_name" content="MichaelMa&#39;s Blog -- By Mr. Ma">
+<meta property="og:description" content="Markdown语法 [TOC] 献给写作者的 Markdown 新手指南献给写作者的 Markdown 新手指南 「简书」作为一款「写作软件」在诞生之初就支持了 Markdown，Markdown 是一种「电子邮件」风格的「标记语言」，我们强烈推荐所有写作者学习和掌握该语言。为什么？可以参考:  『为什么作家应该用 Markdown 保存自己的文稿』。 『Markdown写作浅谈』  在此，我们">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/259-b7a1aa59aaca63e4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/431/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/259-05f6819ea5aa4fdd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/812/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/259-7424a9a21a2cb81b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/815/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/259-8ccbfed8ce487368.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/814/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/259-90ac0f366310f464.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1108/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/259-438c3424cfbfb029.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1106/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/259-6a74e417a86ac97f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1106/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/259-dcf737a97e71cd73.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/879/format/webp">
+<meta property="og:image" content="http://latex.codecogs.com/gif.latex(https://link.jianshu.com?t=http://latex.codecogs.com/gif.latex)?%5Cprod%20(n_%7Bi%7D)+1">
+<meta property="article:published_time" content="2021-11-05T09:25:58.497Z">
+<meta property="article:modified_time" content="2021-12-04T02:13:31.356Z">
+<meta property="article:author" content="Michael Ma">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/259-b7a1aa59aaca63e4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/431/format/webp">
+  
+  <title>Markdown语法 - MichaelMa&#39;s Blog -- By Mr. Ma</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>MichaelMa&#39;s Blog -- By Mr. Ma</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/banner-img.webp') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Markdown语法">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-11-05 17:25" pubdate>
+        2021年11月5日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.5k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      8 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Markdown语法</h1>
+            
+            <div class="markdown-body">
+              <p>Markdown语法</p>
+<p>[TOC]</p>
+<h1 id="献给写作者的-Markdown-新手指南"><a href="#献给写作者的-Markdown-新手指南" class="headerlink" title="献给写作者的 Markdown 新手指南"></a><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/q81RER">献给写作者的 Markdown 新手指南</a></h1><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/q81RER">献给写作者的 Markdown 新手指南</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/">「简书」</a>作为一款「写作软件」在诞生之初就支持了 Markdown，Markdown 是一种「电子邮件」风格的「标记语言」，我们强烈推荐所有写作者学习和掌握该语言。为什么？可以参考:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/qqGjLN">『为什么作家应该用 Markdown 保存自己的文稿』</a>。</li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/PpDNMG">『Markdown写作浅谈』</a></li>
+</ul>
+<p>在此，我们总结 Markdown 的优点如下：</p>
+<ul>
+<li>纯文本，所以兼容性极强，可以用所有文本编辑器打开。</li>
+<li>让你专注于文字而不是排版。</li>
+<li>格式转换方便，Markdown 的文本你可以轻松转换为 html、电子书等。</li>
+<li>Markdown 的标记语法有极好的可读性。</li>
+</ul>
+<p>当然，我们既然如此推崇 Markdown ，也必定会教会你使用 Markdown ，这也是本文的目的所在。不过，虽然 <a target="_blank" rel="noopener" href="https://link.jianshu.com/?t=http://wowubuntu.com/markdown/">Markdown 的语法</a>已经足够简单，但是现有的 Markdown 语法说明更多的是写给 web 从业者看的，对于很多写作者来说，学习起来效率很低，现在，我们特地为写作者量身定做本指南，从写作者的实际需求出发，介绍写作者真正实用的常用格式，深入浅出、图文并茂地让您迅速掌握 Markdown 语法。</p>
+<p>为了使您更好地学习，我们建议您登录<a href="%5Bhttp://www%5D(https://link.jianshu.com?t=http://www">「简书」</a>. <a target="_blank" rel="noopener" href="https://jianshu.com/">jianshu.com</a>)，将您的编辑器切换至 Markdown 编辑器，新建一篇空白笔记，然后点击右上角的预览模式：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/259-b7a1aa59aaca63e4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/431/format/webp" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>此时，您的界面应当如下图所示，左侧为编辑区域，右侧为预览区域，您在左侧输入 Markdown 语法的文本，右侧会立即帮您呈现最终结果，好了，让我们开始学习吧~</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/259-05f6819ea5aa4fdd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/812/format/webp" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>这是最为常用的格式，在平时常用的的文本编辑器中大多是这样实现的：输入文本、选中文本、设置标题格式。</p>
+<p>而在 Markdown 中，你只需要在文本前面加上 <code>#</code> 即可，同理、你还可以增加二级标题、三级标题、四级标题、五级标题和六级标题，总共六级，只需要增加 <code>#</code> 即可，标题字号相应降低。例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 一级标题</span><br><span class="hljs-comment">## 二级标题</span><br><span class="hljs-comment">### 三级标题</span><br><span class="hljs-comment">#### 四级标题</span><br><span class="hljs-comment">##### 五级标题</span><br><span class="hljs-comment">###### 六级标题 </span><br></code></pre></td></tr></table></figure>
+
+<p><em>注：<code>#</code> 和「一级标题」之间建议保留一个字符的空格，这是最标准的 Markdown 写法。</em></p>
+<p><em>你可以你的编辑器中尝试输入这六级标题，可以参考下方的截图：</em></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/259-7424a9a21a2cb81b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/815/format/webp" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>一级标题至六级标题</p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>列表格式也很常用，在 Markdown 中，你只需要在文字前面加上 <code>-</code> 就可以了，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined">- 文本1<br>- 文本2<br>- 文本3<br></code></pre></td></tr></table></figure>
+
+<p>如果你希望有序列表，<br> 也可以在文字前面加上 <code>1.</code> <code>2.</code> <code>3.</code> 就可以了，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined">1. 文本1<br>2. 文本2<br>3. 文本3<br></code></pre></td></tr></table></figure>
+
+<p><em>注：<code>-</code>、<code>1.</code>和文本之间要保留一个字符的空格。</em></p>
+<p><em>列表案例截图如下：</em></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/259-8ccbfed8ce487368.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/814/format/webp" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h2 id="picture"> 链接和图片</h2>
+
+<p>在 Markdown 中，插入链接不需要其他按钮，你只需要使用 <code>[显示文本](链接地址)</code> 这样的语法即可，例如：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp">[<span class="hljs-meta">简书</span>](http:<span class="hljs-comment">//www.jianshu.com)</span><br></code></pre></td></tr></table></figure>
+
+<p>在 Markdown 中，插入图片不需要其他按钮，你只需要使用 <code>![](图片链接地址)</code> 这样的语法即可，例如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">![](http:<span class="hljs-comment">//upload-images.jianshu.io/upload_images/259-0ad0d0bfc1c608b6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br></code></pre></td></tr></table></figure>
+
+<p><em>注：插入图片的语法和链接的语法很像，只是前面多了一个 <code>！</code>。</em></p>
+<p><em>插入链接和图片的案例截图：</em></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/259-90ac0f366310f464.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1108/format/webp" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>在我们写作的时候经常需要引用他人的文字，这个时候引用这个格式就很有必要了，在 Markdown 中，你只需要在你希望引用的文字前面加上 <code>&gt;</code> 就好了，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&gt; 一盏灯， 一片昏黄； 一简书， 一杯淡茶。 守着那一份淡定， 品读属于自己的寂寞。 保持淡定， 才能欣赏到最美丽的风景！ 保持淡定， 人生从此不再寂寞。<br></code></pre></td></tr></table></figure>
+
+<p><em>注：<code>&gt;</code> 和文本之间要保留一个字符的空格。</em></p>
+<p>最终显示的就是：</p>
+<blockquote>
+<p>一盏灯， 一片昏黄； 一简书， 一杯淡茶。 守着那一份淡定， 品读属于自己的寂寞。 保持淡定， 才能欣赏到最美丽的风景！ 保持淡定， 人生从此不再寂寞。</p>
+</blockquote>
+<p><em>引用的案例截图：</em></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/259-438c3424cfbfb029.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1106/format/webp" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h2 id="粗体和斜体"><a href="#粗体和斜体" class="headerlink" title="粗体和斜体"></a>粗体和斜体</h2><p>Markdown 的粗体和斜体也非常简单，用两个 <code>*</code> 包含一段文本就是粗体的语法，用一个 <code>*</code> 包含一段文本就是斜体的语法。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">*一盏灯*， 一片昏黄；**一简书**， 一杯淡茶。 守着那一份淡定， 品读属于自己的寂寞。 保持淡定， 才能欣赏到最美丽的风景！ 保持淡定， 人生从此不再寂寞。<br></code></pre></td></tr></table></figure>
+
+<p>最终显示的就是下文，其中「一盏灯」是斜体，「一简书」是粗体：</p>
+<p><em>一盏灯</em>， 一片昏黄；<strong>一简书</strong>， 一杯淡茶。 守着那一份淡定， 品读属于自己的寂寞。 保持淡定， 才能欣赏到最美丽的风景！ 保持淡定， 人生从此不再寂寞。</p>
+<p><em>粗体和斜体的案例截图：</em></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/259-6a74e417a86ac97f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1106/format/webp" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h2 id="代码引用"><a href="#代码引用" class="headerlink" title="代码引用"></a>代码引用</h2><p>需要引用代码时，如果引用的语句只有一段，不分行，可以用 ` 将语句包起来。<br> 如果引用的语句为多行，可以将```置于这段代码的首行和末行。<br> <em>代码引用的案例截图：</em></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/259-dcf737a97e71cd73.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/879/format/webp" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>相关代码：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ruby"><span class="hljs-params">| Tables        |</span> Are           <span class="hljs-params">| Cool  |</span><br><span class="hljs-params">| ------------- |</span><span class="hljs-symbol">:-------------</span><span class="hljs-symbol">:|</span> -----<span class="hljs-symbol">:|</span><br><span class="hljs-params">| col 3 is      |</span> right-aligned <span class="hljs-params">| $1600 |</span><br><span class="hljs-params">| col 2 is      |</span> centered      <span class="hljs-params">|   $12 |</span><br><span class="hljs-params">| zebra stripes |</span> are neat      <span class="hljs-params">|    $1 |</span><br></code></pre></td></tr></table></figure>
+
+<p>显示效果：</p>
+<table>
+<thead>
+<tr>
+<th>Tables</th>
+<th align="center">Are</th>
+<th align="right">Cool</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>col 3 is</td>
+<td align="center">right-aligned</td>
+<td align="right">$1600</td>
+</tr>
+<tr>
+<td>col 2 is</td>
+<td align="center">centered</td>
+<td align="right">$12</td>
+</tr>
+<tr>
+<td>zebra stripes</td>
+<td align="center">are neat</td>
+<td align="right">$1</td>
+</tr>
+</tbody></table>
+<p></p> 相关代码：
+
+
+
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ruby">dog <span class="hljs-params">| bird |</span> cat<br>----<span class="hljs-params">|------|</span>----<br>foo <span class="hljs-params">| foo  |</span> foo<br>bar <span class="hljs-params">| bar  |</span> bar<br>baz <span class="hljs-params">| baz  |</span> baz<br></code></pre></td></tr></table></figure>
+
+<p>显示效果：</p>
+<table>
+<thead>
+<tr>
+<th>dog</th>
+<th>bird</th>
+<th>cat</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>foo</td>
+<td>foo</td>
+<td>foo</td>
+</tr>
+<tr>
+<td>bar</td>
+<td>bar</td>
+<td>bar</td>
+</tr>
+<tr>
+<td>baz</td>
+<td>baz</td>
+<td>baz</td>
+</tr>
+</tbody></table>
+<p></p>
+
+<h2 id="显示链接中带括号的图片"><a href="#显示链接中带括号的图片" class="headerlink" title="显示链接中带括号的图片"></a>显示链接中带括号的图片</h2><p><img src="http://latex.codecogs.com/gif.latex(https://link.jianshu.com?t=http://latex.codecogs.com/gif.latex)?%5Cprod%20(n_%7Bi%7D)+1" srcset="/img/loading.gif" lazyload></p>
+<p>代码如下:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs csharp">![][<span class="hljs-number">1</span>]<br>[<span class="hljs-meta">1</span>]: http:<span class="hljs-comment">//latex.codecogs.com/gif.latex?\prod%20\(n_&#123;i&#125;\)+1</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>以上几种格式是比较常用的格式，所以我们针对这些语法做了比较详细的说明。除这些之外，Markdown 还有其他语法，如想了解和学习更多，可以参考这篇<a target="_blank" rel="noopener" href="https://link.jianshu.com/?t=http://wowubuntu.com/markdown/">『Markdown 语法说明』</a>。</p>
+<p>强烈建议您现在就立马用 Markdown 写一篇文章吧，体会一下 Markdown 的优雅之处！</p>
+<p>最后，希望我们的指南可以帮助到您，也希望<a target="_blank" rel="noopener" href="https://www.jianshu.com/">「简书」</a>能够成为您书写 Markdown 的最佳选择。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/11/05/%E5%8F%AF%E7%BC%96%E8%BE%91%E8%A1%A8%E6%A0%BC/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">可编辑表格</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
