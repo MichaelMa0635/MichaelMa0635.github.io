@@ -202,12 +202,11 @@
             
           
           [TOC]
-使用Log4j时，为什么要写if (log.isDebugEnabled()) 或 if (log.isInfoEnabled())在项目中我们经常可以看到这样的代码：
-123if (logger.isDebugEnabled()) &#123;    logger.debug(message);&#125;
+Java日志框架中需要判断log.isDebugEnabled()吗？背景在日常开发中，项目会使用抽象日志接口slf4j来打印日志。如下是一段典型的打印日志代码：
+1logger.debug(&quot;hello, world&quot;);
 
-
-
-简单来说，就是用isDebugEnabled方法判断下是能提升性能的！
+在一些项目或第三方开源框架中，也会发现有些代码在输出日志时，在前面添加if判断，代码如下：
+123if (logger.isDebugEna
         </a>
       </p>
 
