@@ -16,21 +16,19 @@
   <meta name="description" content="">
   <meta name="author" content="Michael Ma">
   <meta name="keywords" content="">
-  <meta name="description" content="Tomcat [TOC] Tomcat版本篇版本选择 Which version?  Apache Tomcat 版本Apache Tomcat ®是 Jakarta EE（正式名称为 Java EE）技术子集的开源软件实现。不同版本的规范有不同版本的Apache Tomcat。规范和各自的 Apache Tomcat 版本之间的映射 是：    Apache Tomcat 版本 最新发布版本 S">
+  <meta name="description" content="[TOC] 使用Log4j时，为什么要写if (log.isDebugEnabled()) 或 if (log.isInfoEnabled())在项目中我们经常可以看到这样的代码： 123if (logger.isDebugEnabled()) &amp;#123;    logger.debug(message);&amp;#125;    简单来说，就是用isDebugEnabled方法判断下是能提升性能的！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tomcat">
-<meta property="og:url" content="http://example.com/2021/12/04/Tomcat/index.html">
+<meta property="og:title" content="为什么要写log.isDebugEnabled()">
+<meta property="og:url" content="http://example.com/2021/12/15/log.isDebugEnabled()_/index.html">
 <meta property="og:site_name" content="MichaelMa&#39;s Blog -- By Mr. Ma">
-<meta property="og:description" content="Tomcat [TOC] Tomcat版本篇版本选择 Which version?  Apache Tomcat 版本Apache Tomcat ®是 Jakarta EE（正式名称为 Java EE）技术子集的开源软件实现。不同版本的规范有不同版本的Apache Tomcat。规范和各自的 Apache Tomcat 版本之间的映射 是：    Apache Tomcat 版本 最新发布版本 S">
+<meta property="og:description" content="[TOC] 使用Log4j时，为什么要写if (log.isDebugEnabled()) 或 if (log.isInfoEnabled())在项目中我们经常可以看到这样的代码： 123if (logger.isDebugEnabled()) &amp;#123;    logger.debug(message);&amp;#125;    简单来说，就是用isDebugEnabled方法判断下是能提升性能的！">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-12-04T11:02:25.000Z">
-<meta property="article:modified_time" content="2021-12-01T11:44:53.040Z">
+<meta property="article:published_time" content="2021-12-15T10:46:03.938Z">
+<meta property="article:modified_time" content="2021-12-15T10:48:14.738Z">
 <meta property="article:author" content="Michael Ma">
-<meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="Fluid">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>Tomcat - MichaelMa&#39;s Blog -- By Mr. Ma</title>
+  <title>为什么要写log.isDebugEnabled() - MichaelMa&#39;s Blog -- By Mr. Ma</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -176,7 +174,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Tomcat">
+            <span class="h2" id="subtitle" title="为什么要写log.isDebugEnabled()">
               
             </span>
 
@@ -186,8 +184,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-12-04 19:02" pubdate>
-        2021年12月4日 晚上
+      <time datetime="2021-12-15 18:46" pubdate>
+        2021年12月15日 晚上
       </time>
     </span>
   
@@ -197,7 +195,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      796 字
+      1.4k 字
     </span>
   
 
@@ -206,7 +204,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2 分钟
+      4 分钟
     </span>
   
 
@@ -235,209 +233,45 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Tomcat</h1>
+            <h1 style="display: none">为什么要写log.isDebugEnabled()</h1>
             
             <div class="markdown-body">
-              <p>Tomcat</p>
-<p>[TOC]</p>
-<h1 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h1><h2 id="版本篇"><a href="#版本篇" class="headerlink" title="版本篇"></a>版本篇</h2><h3 id="版本选择"><a href="#版本选择" class="headerlink" title="版本选择"></a>版本选择</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="http://tomcat.apache.org/whichversion.html">Which version?</a></p>
-</blockquote>
-<h3 id="Apache-Tomcat-版本"><a href="#Apache-Tomcat-版本" class="headerlink" title="Apache Tomcat 版本"></a>Apache Tomcat 版本</h3><p>Apache Tomcat ®是 Jakarta EE（正式名称为 Java EE）技术子集的开源软件实现。不同版本的规范有不同版本的Apache Tomcat。<a target="_blank" rel="noopener" href="https://cwiki.apache.org/confluence/display/TOMCAT/Specifications">规范</a>和各自的 Apache Tomcat 版本之间<a target="_blank" rel="noopener" href="https://cwiki.apache.org/confluence/display/TOMCAT/Specifications">的</a>映射 是：</p>
-<table>
-<thead>
-<tr>
-<th align="left"><strong>Apache Tomcat 版本</strong></th>
-<th align="left"><strong>最新发布版本</strong></th>
-<th align="left"><strong>Servlet规范</strong></th>
-<th align="left"><strong>JSP规范</strong></th>
-<th align="left"><strong>EL 规格</strong></th>
-<th align="left"><strong>WebSocket 规范</strong></th>
-<th align="left"><strong>认证 (JASIC) 规范</strong></th>
-<th align="left"><strong>支持的 Java 版本</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">10.1.x</td>
-<td align="left">10.1.0-M4（阿尔法）</td>
-<td align="left">6.0</td>
-<td align="left">待定</td>
-<td align="left">待定</td>
-<td align="left">待定</td>
-<td align="left">待定</td>
-<td align="left">11 及以后</td>
-</tr>
-<tr>
-<td align="left">10.0.x</td>
-<td align="left">10.0.10</td>
-<td align="left">5.0</td>
-<td align="left">3.0</td>
-<td align="left">4.0</td>
-<td align="left">2.0</td>
-<td align="left">2.0</td>
-<td align="left">8 及以后</td>
-</tr>
-<tr>
-<td align="left">9.0.x</td>
-<td align="left">9.0.52</td>
-<td align="left">4.0</td>
-<td align="left">2.3</td>
-<td align="left">3.0</td>
-<td align="left">1.1</td>
-<td align="left">1.1</td>
-<td align="left">8 及以后</td>
-</tr>
-<tr>
-<td align="left">8.5.x</td>
-<td align="left">8.5.70</td>
-<td align="left">3.1</td>
-<td align="left">2.3</td>
-<td align="left">3.0</td>
-<td align="left">1.1</td>
-<td align="left">1.1</td>
-<td align="left">7 及以后</td>
-</tr>
-<tr>
-<td align="left">8.0.x（被取代）</td>
-<td align="left">8.0.53（已取代）</td>
-<td align="left">3.1</td>
-<td align="left">2.3</td>
-<td align="left">3.0</td>
-<td align="left">1.1</td>
-<td align="left">不适用</td>
-<td align="left">7 及以后</td>
-</tr>
-<tr>
-<td align="left">7.0.x（已存档）</td>
-<td align="left">7.0.109（存档）</td>
-<td align="left">3.0</td>
-<td align="left">2.2</td>
-<td align="left">2.2</td>
-<td align="left">1.1</td>
-<td align="left">不适用</td>
-<td align="left">6 及更高版本 （WebSocket 为 7 及更高版本）</td>
-</tr>
-<tr>
-<td align="left">6.0.x（已存档）</td>
-<td align="left">6.0.53（存档）</td>
-<td align="left">2.5</td>
-<td align="left">2.1</td>
-<td align="left">2.1</td>
-<td align="left">不适用</td>
-<td align="left">不适用</td>
-<td align="left">5 及以后</td>
-</tr>
-<tr>
-<td align="left">5.5.x（已存档）</td>
-<td align="left">5.5.36（存档）</td>
-<td align="left">2.4</td>
-<td align="left">2.0</td>
-<td align="left">不适用</td>
-<td align="left">不适用</td>
-<td align="left">不适用</td>
-<td align="left">1.4 及更高版本</td>
-</tr>
-<tr>
-<td align="left">4.1.x（已存档）</td>
-<td align="left">4.1.40（存档）</td>
-<td align="left">2.3</td>
-<td align="left">1.2</td>
-<td align="left">不适用</td>
-<td align="left">不适用</td>
-<td align="left">不适用</td>
-<td align="left">1.3 及更高版本</td>
-</tr>
-<tr>
-<td align="left">3.3.x（已存档）</td>
-<td align="left">3.3.2（存档）</td>
-<td align="left">2.2</td>
-<td align="left">1.1</td>
-<td align="left">不适用</td>
-<td align="left">不适用</td>
-<td align="left">不适用</td>
-<td align="left">1.1 及更高版本</td>
-</tr>
-</tbody></table>
-<h3 id="Tomcat版本对照表"><a href="#Tomcat版本对照表" class="headerlink" title="Tomcat版本对照表"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/money131/p/10661394.html">Tomcat版本对照表</a></h3><blockquote>
-<p> 导入程序前环境要先配好，环境要想配的正确，版本信息一定要了解。</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th align="center">Tomcat版本</th>
-<th align="center">6.0</th>
-<th align="center">7.0</th>
-<th align="center">8.0</th>
-<th align="center">8.5</th>
-<th align="center">9.0</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><strong>JDK</strong></td>
-<td align="center">≥5.0</td>
-<td align="center">≥6.0</td>
-<td align="center">≥7.0</td>
-<td align="center">≥7.0</td>
-<td align="center">≥8.0</td>
-</tr>
-<tr>
-<td align="center"><strong>Servlet</strong></td>
-<td align="center">2.5</td>
-<td align="center">3.0</td>
-<td align="center">3.1</td>
-<td align="center">3.1</td>
-<td align="center">4.0</td>
-</tr>
-<tr>
-<td align="center"><strong>JSP</strong></td>
-<td align="center">2.1</td>
-<td align="center">2.2</td>
-<td align="center">2.3</td>
-<td align="center">2.3</td>
-<td align="center">2.3</td>
-</tr>
-<tr>
-<td align="center"><strong>EL</strong></td>
-<td align="center">2.1</td>
-<td align="center">2.2</td>
-<td align="center">3.0</td>
-<td align="center">3.0</td>
-<td align="center">3.0</td>
-</tr>
-<tr>
-<td align="center"><strong>WebScoket</strong></td>
-<td align="center">N/A</td>
-<td align="center">1.1</td>
-<td align="center">1.1</td>
-<td align="center">1.1</td>
-<td align="center">1.1</td>
-</tr>
-</tbody></table>
-<h2 id="下载篇"><a href="#下载篇" class="headerlink" title="下载篇"></a>下载篇</h2><h3 id="地址"><a href="#地址" class="headerlink" title="地址"></a>地址</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="http://tomcat.apache.org/">Tomcat</a></p>
-</blockquote>
+              <p>[TOC]</p>
+<h2 id="使用Log4j时，为什么要写if-log-isDebugEnabled-或-if-log-isInfoEnabled"><a href="#使用Log4j时，为什么要写if-log-isDebugEnabled-或-if-log-isInfoEnabled" class="headerlink" title="使用Log4j时，为什么要写if (log.isDebugEnabled()) 或 if (log.isInfoEnabled())"></a>使用Log4j时，为什么要写if (log.isDebugEnabled()) 或 if (log.isInfoEnabled())</h2><p>在项目中我们经常可以看到这样的代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span> (logger.isDebugEnabled()) &#123;<br>    logger.debug(message);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="简单来说，就是用isDebugEnabled方法判断下是能提升性能的！！"><a href="#简单来说，就是用isDebugEnabled方法判断下是能提升性能的！！" class="headerlink" title="简单来说，就是用isDebugEnabled方法判断下是能提升性能的！！"></a>简单来说，就是用isDebugEnabled方法判断下是能提升性能的！！</h5><p>有些人不明白为什么要这样写。有些人认为这样是为了能够控制日志的输出，对于下面这行代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">logger.debug(message);<br></code></pre></td></tr></table></figure>
+
+<p>他们的看法是：如果这样写的话，就算你把日志级别调整为info, 这里也会输出日志。</p>
+<h5 id="其实，在debug-方法里面，就已经判断了日志的级别。以下是isDebugEnabled-的源码："><a href="#其实，在debug-方法里面，就已经判断了日志的级别。以下是isDebugEnabled-的源码：" class="headerlink" title="其实，在debug()方法里面，就已经判断了日志的级别。以下是isDebugEnabled()的源码："></a>其实，在debug()方法里面，就已经判断了日志的级别。以下是isDebugEnabled()的源码：</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isDebugEnabled</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">if</span>(repository.isDisabled( Level.DEBUG_INT))<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    <span class="hljs-keyword">return</span> Level.DEBUG.isGreaterOrEqual(<span class="hljs-keyword">this</span>.getEffectiveLevel());<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>以下是debug()的源码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">debug</span><span class="hljs-params">(Object message)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span>(repository.isDisabled(Level.DEBUG_INT))<br>        <span class="hljs-keyword">return</span>;<br>    <span class="hljs-keyword">if</span>(Level.DEBUG.isGreaterOrEqual(<span class="hljs-keyword">this</span>.getEffectiveLevel())) &#123;<br>        forcedLog(FQCN, Level.DEBUG, message, <span class="hljs-keyword">null</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="我们可以看到，在debug-方法里做了跟isDebugEnabled-方法一样的判断。"><a href="#我们可以看到，在debug-方法里做了跟isDebugEnabled-方法一样的判断。" class="headerlink" title="我们可以看到，在debug()方法里做了跟isDebugEnabled()方法一样的判断。"></a>我们可以看到，在debug()方法里做了跟isDebugEnabled()方法一样的判断。</h5><p>在这里，我们不禁会想，那我们凡是要输日志的地方，都不判断isDebugEnabled,直接调debug方法，不更省事吗？</p>
+<h5 id="官方的说法是：出于效率考虑，看具体情况而定"><a href="#官方的说法是：出于效率考虑，看具体情况而定" class="headerlink" title="官方的说法是：出于效率考虑，看具体情况而定."></a>官方的说法是：出于效率考虑，看具体情况而定.</h5><p>我们来看下面一行代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">logger.debug(<span class="hljs-string">&quot;The money is &quot;</span> + getTotalMoney());<br></code></pre></td></tr></table></figure>
+
+
+<p>假设我们的日志级别设置为info,那这句话不会输出日志，但这个方法还是会调用。要调用这个方法，必须提供参数。getTotalMoney()方法返回的结果就是参数的一部分。假设getTotalMoney()要执行10秒钟，10秒钟后，进入到debug()方法里，碰到了第一个判断：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">if</span>(repository.<span class="hljs-built_in">isDisabled</span>(Level.DEBUG_INT))<br>	 <span class="hljs-keyword">return</span>;<br></code></pre></td></tr></table></figure>
+
+
+<p>在这里就返回了。结果是日志虽然没有输出，却花费了10秒钟来构造参数。很显然这里得不偿失的。尽管实际应用中几乎不可能有这种花10秒钟来构造这样一个参数的情况，但如果并发数大的话，这样写还是会影响系统的性能的。这个时候，就应该写成：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span>(logger.isDebugEnabled())&#123;<br>    logger.debug(<span class="hljs-string">&quot;The money is &quot;</span> + getTotalMoney());<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>如果debug的参数很简单的话，也可以直接写 logger.debug(message)的。官方的说法，执行一次logger.isDebugEnabled()这样的判断花费的时间大概是写日志时间的万分之一.虽然这个比例很小，</p>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/%E5%9F%BA%E7%A1%80%E7%AF%87/">基础篇</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/Hexo/">Hexo</a>
-                    
-                      <a class="hover-with-bg" href="/tags/Fluid/">Fluid</a>
-                    
-                  </div>
                 
               </div>
               
@@ -452,18 +286,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/12/15/log.isDebugEnabled()_/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">为什么要写log.isDebugEnabled()</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/12/04/Markdown%E8%AF%AD%E6%B3%95_/">
-                        <span class="hidden-mobile">Markdown语法</span>
+                      <a href="/2021/12/04/Tomcat/">
+                        <span class="hidden-mobile">Tomcat</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
